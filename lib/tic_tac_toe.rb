@@ -117,6 +117,7 @@ def play
     puts "Congratulations #{winner}!"
   else 
     puts "Cat's Game!"
+  end
 end
 
 
