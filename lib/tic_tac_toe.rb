@@ -76,18 +76,48 @@ def turn
     end
 end
 
-def draw
-  if turn_count == 8
+def draw?
+  if turn_count < 8 || won?
+    return false
+  else 
     return true
   end
 end
 
-def won?
+def won? 
+    WIN_COMBINATIONS.detect do |combo|
+    (@board[combo[0]] == @board[combo[1]] && @board[combo[1]] == @board[combo[2]]) && (@board[combo[0]] == "X" || @board[combo[0]] == "O")
+    end
+  end
   
-  if draw
-    return false
+def full?
+  if draw?
+   return true
   end
 end
+
+def over?
+  if draw? || won?
+    return true
+  end
+end
+
+def winner
+  if won?
+    @board[won?[0]]
+  else 
+    return nil
+  end  
+end
+
+def play 
+  turn
+  while !over?
+  turn
+  end
+  #puts "Congratulations #{@board[won?[0]]}"
+end
+
 
 end
   
