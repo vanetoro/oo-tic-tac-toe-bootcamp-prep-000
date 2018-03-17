@@ -114,7 +114,6 @@ def play
   while !over?
   turn
   end
-  #puts "Congratulations #{@board[won?[0]]}"
 end
 
 
