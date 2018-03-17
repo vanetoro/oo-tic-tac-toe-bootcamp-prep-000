@@ -111,7 +111,6 @@ def winner
 end
 
 def play 
-  turn
   while !over?
   turn
   end
