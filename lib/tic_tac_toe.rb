@@ -113,6 +113,7 @@ def play
   while !over?
   turn
   end
+  puts "Congratulations #{winner}"
 end
 
 
